@@ -76,6 +76,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-afm-client/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish gooddata-metadata-client
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -83,6 +84,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-metadata-client/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish gooddata-scan-client
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -90,6 +92,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-scan-client/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish gooddata-pandas
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -97,6 +100,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-pandas/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish gooddata-fdw
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -104,6 +108,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-fdw/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish gooddata-sdk
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -111,3 +116,4 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         packages_dir: gooddata-sdk/dist/
         verbose: true
+        repository_url: https://test.pypi.org/legacy/
