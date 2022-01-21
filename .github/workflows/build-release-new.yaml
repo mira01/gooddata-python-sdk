@@ -28,6 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: ./.github/workflows/build-only.yaml
-    - with:
-      - path: 'gooddata-afm-client'
-      - component_name: 'gooddata-afm-client'
+      with:
+        path: 'gooddata-afm-client'
+        component_name: 'gooddata-afm-client'
