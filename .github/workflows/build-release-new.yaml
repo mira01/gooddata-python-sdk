@@ -1,0 +1,33 @@
+# (C) 2022 GoodData Corporation
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Build Python Package and Create Release
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  zbuildit:
+    strategy:
+      matrix:
+        component:
+          - gooddata-afm-client
+          - gooddata-metadata-client
+          - gooddata-scan-client
+          - gooddata-pandas
+          - gooddata-fdw
+          - gooddata-sdk
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ./.github/workflows/build-only.yaml
+    - with:
+      - path: 'gooddata-afm-client'
+      - component_name: 'gooddata-afm-client'
