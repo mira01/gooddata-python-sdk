@@ -16,6 +16,15 @@ on:
 
 jobs:
   zbuildit:
+    strategy:
+      matrix:
+        component:
+          - gooddata-afm-client
+          - gooddata-metadata-client
+          - gooddata-scan-client
+          - gooddata-pandas
+          - gooddata-fdw
+          - gooddata-sdk
     uses: mira01/gooddata-python-sdk/.github/workflows/build-only.yaml@twine
     with:
       path: 'gooddata-afm-client'
