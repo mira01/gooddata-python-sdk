@@ -25,7 +25,9 @@ jobs:
           - gooddata-pandas
           - gooddata-fdw
           - gooddata-sdk
-    uses: mira01/gooddata-python-sdk/.github/workflows/build-only.yaml@twine
-    with:
-      path: ${{ matrix.component }}
-      component_name: ${{ matrix.component }}
+    runs-on: ubuntu-latest
+    steps:
+      uses: mira01/gooddata-python-sdk/.github/workflows/build-only.yaml@twine
+      with:
+        path: ${{ matrix.component }}
+        component_name: ${{ matrix.component }}
