@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: ./.github/workflows/build-only.yaml
+    - uses: mira01/gooddata-python-sdk/.github/workflows/build-only.yaml@twine
       with:
         path: 'gooddata-afm-client'
         component_name: 'gooddata-afm-client'
