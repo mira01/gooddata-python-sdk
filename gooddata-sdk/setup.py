@@ -7,9 +7,9 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 REQUIRES = [
-    "gooddata-afm-client~=0.6.3",
-    "gooddata-metadata-client~=0.6.3",
-    "gooddata-scan-client~=0.6.3",
+    "gooddata-afm-client~=0.6.4",
+    "gooddata-metadata-client~=0.6.4",
+    "gooddata-scan-client~=0.6.4",
     'importlib-metadata >= 1.0 ; python_version < "3.8"',
     "python-dateutil>=2.5.3",
 ]
@@ -20,7 +20,7 @@ setup(
     description="GoodData.CN Python SDK",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    version="0.6.3",
+    version="0.6.4",
     author="GoodData",
     author_email="support@gooddata.com",
     license="MIT",
