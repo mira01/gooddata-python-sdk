@@ -41,7 +41,6 @@ jobs:
       run: |
           cd ${{ matrix.component }}
           python -m build
-
   github_release:
     name: Create GitHub release
     runs-on: ubuntu-latest
@@ -63,7 +62,6 @@ jobs:
               gooddata-fdw/dist/*.tar.gz
               gooddata-sdk/dist/*.whl
               gooddata-sdk/dist/*.tar.gz
-
   publish:
     name: Publish components
     runs-on: ubuntu-latest
