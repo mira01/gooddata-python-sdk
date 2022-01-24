@@ -41,44 +41,44 @@ jobs:
       run: |
           cd ${{ matrix.component }}
           python -m build
-  github_release:
-    name: Create GitHub release
-    runs-on: ubuntu-latest
-    needs: build
-    uses: "marvinpinto/action-automatic-releases@latest"
-    with:
-      repo_token: "${{ secrets.GITHUB_TOKEN }}"
-      prerelease: false
-      files: |
-              gooddata-afm-client/dist/*.whl
-              gooddata-afm-client/dist/*.tar.gz
-              gooddata-metadata-client/dist/*.whl
-              gooddata-metadata-client/dist/*.tar.gz
-              gooddata-scan-client/dist/*.whl
-              gooddata-scan-client/dist/*.tar.gz
-              gooddata-pandas/dist/*.whl
-              gooddata-pandas/dist/*.tar.gz
-              gooddata-fdw/dist/*.whl
-              gooddata-fdw/dist/*.tar.gz
-              gooddata-sdk/dist/*.whl
-              gooddata-sdk/dist/*.tar.gz
-  publish:
-    name: Publish components
-    runs-on: ubuntu-latest
-    needs: build
-    strategy:
-      matrix:
-        component:
-          - gooddata-afm-client
-          - gooddata-metadata-client
-          - gooddata-scan-client
-          - gooddata-pandas
-          - gooddata-fdw
-          - gooddata-sdk
-    uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-    with:
-      user: __token__
-      password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-      packages_dir: ${{ matrix.component }}/dist/
-      verbose: true
-      repository_url: https://test.pypi.org/legacy/
+#  github_release:
+#    name: Create GitHub release
+#    runs-on: ubuntu-latest
+#    needs: build
+#    uses: "marvinpinto/action-automatic-releases@latest"
+#    with:
+#      repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#      prerelease: false
+#      files: |
+#              gooddata-afm-client/dist/*.whl
+#              gooddata-afm-client/dist/*.tar.gz
+#              gooddata-metadata-client/dist/*.whl
+#              gooddata-metadata-client/dist/*.tar.gz
+#              gooddata-scan-client/dist/*.whl
+#              gooddata-scan-client/dist/*.tar.gz
+#              gooddata-pandas/dist/*.whl
+#              gooddata-pandas/dist/*.tar.gz
+#              gooddata-fdw/dist/*.whl
+#              gooddata-fdw/dist/*.tar.gz
+#              gooddata-sdk/dist/*.whl
+#              gooddata-sdk/dist/*.tar.gz
+#  publish:
+#    name: Publish components
+#    runs-on: ubuntu-latest
+#    needs: build
+#    strategy:
+#      matrix:
+#        component:
+#          - gooddata-afm-client
+#          - gooddata-metadata-client
+#          - gooddata-scan-client
+#          - gooddata-pandas
+#          - gooddata-fdw
+#          - gooddata-sdk
+#    uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+#    with:
+#      user: __token__
+#      password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+#      packages_dir: ${{ matrix.component }}/dist/
+#      verbose: true
+#      repository_url: https://test.pypi.org/legacy/
