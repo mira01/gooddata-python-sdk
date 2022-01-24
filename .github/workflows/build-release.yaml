@@ -22,10 +22,10 @@ jobs:
         component:
           - gooddata-afm-client
           - gooddata-metadata-client
-#          - gooddata-scan-client
-#          - gooddata-pandas
-#          - gooddata-fdw
-#          - gooddata-sdk
+          - gooddata-scan-client
+          - gooddata-pandas
+          - gooddata-fdw
+          - gooddata-sdk
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -57,7 +57,7 @@ jobs:
         with:
           path: dist/
       - name: Create GitHub release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: "marvinpinto/action-automatic-releases@05a5fd79e119b74bf8fa909a7ecb52bef9aaf1da"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
@@ -73,10 +73,10 @@ jobs:
         component:
           - gooddata-afm-client
           - gooddata-metadata-client
-#          - gooddata-scan-client
-#          - gooddata-pandas
-#          - gooddata-fdw
-#          - gooddata-sdk
+          - gooddata-scan-client
+          - gooddata-pandas
+          - gooddata-fdw
+          - gooddata-sdk
     steps:
       - name: Obtain ${{ matrix.component }} artifacts
         uses: actions/download-artifact@v2
