@@ -57,7 +57,7 @@ jobs:
         with:
           path: dist/
       - name: Create GitHub release
-        uses: "marvinpinto/action-automatic-releases@05a5fd79e119b74bf8fa909a7ecb52bef9aaf1da"
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
