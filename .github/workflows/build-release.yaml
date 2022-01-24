@@ -45,7 +45,7 @@ jobs:
   github_release:
     name: Create GitHub release
     runs-on: ubuntu-latest
-    needs: build
+#    needs: build
     uses: "marvinpinto/action-automatic-releases@latest"
     with:
       repo_token: "${{ secrets.GITHUB_TOKEN }}"
