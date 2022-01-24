@@ -56,6 +56,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           path: dist/
+      - name: ls
+        run: ls
+      - name: pwd
+        run: pwd
       - name: Create GitHub release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
